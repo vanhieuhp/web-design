@@ -1,15 +1,21 @@
 body {
-  background-image: url("../images/home-template.png");
-  background-repeat: no-repeat;
+  all: unset;
+}
+
+/* HOME */
+.background-home {
+  background-image: url("../images/desktop/home-desktop.jpg");
+  background-repeat: repeat;
   background-size: 100%;
 }
 
-body {
+.background-home {
   margin: 0;
+  min-height: 1000px;
 }
 
 .layer {
-  margin: 0 100px;
+  margin: 0 50px;
 }
 
 .tabbars {
@@ -19,22 +25,23 @@ body {
   padding: 10px;
 }
 
-.tabbars-right ul {
+.tabbars-left ul {
   list-style: none;
   padding: 0;
   display: flex;
-  align-items: center; 
-} 
+  align-items: center;
+}
 
-.tabbars-right-item {
+
+.tabbars-left-item {
   color: #f2622d;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 10px;
   font-size: 30px;
   font-weight: bold;
 }
 
-.tabbars-left ul {
+.tabbars-right ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -42,7 +49,7 @@ body {
   align-items: center;
 }
 
-.tabbars-left-item {
+.tabbars-right-item {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
@@ -50,17 +57,20 @@ body {
   font-weight: bold;
 }
 
+.tabbars-left-item:hover {
+  opacity: 0.8;
+}
+
 .home-body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 150px;
 }
 
 .body1 {
   display: grid;
-  grid-template-columns: 50% 50% ;
-  grid-template-rows: auto auto ;
+  grid-template-columns: 60% 60%;
+  grid-template-rows: auto auto;
 }
 
 .body1-grid {
@@ -70,10 +80,25 @@ body {
   text-align: center;
 }
 
+
+.body1-grid-onestopshop {
+  display: none;
+  color: #fff;
+  background-color: #f2622d;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
 .body1-grid-lable {
   color: #f2622d;
   font-size: 100px;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .body1-grid-text {
@@ -82,11 +107,9 @@ body {
   margin: auto;
   font-weight: bold;
   width: 80%;
+  text-align: justify;
 }
 
-.body1-grid-button {
-  margin-top: 20px;
-}
 
 .body1-grid-button-shopnow {
   color: #fff;
@@ -101,8 +124,16 @@ body {
 
 }
 
+.body1-grid-button-shopnow:hover {
+  opacity: 0.8;
+}
+
+.body1-grid-button-learnmore:hover {
+  opacity: 0.8;
+}
+
 .body1-grid-button-learnmore {
-  color:  #f2622d;
+  color: #f2622d;
   background-color: #fff;
   border: 2px solid rgba(0, 0, 0, 0.8);
   font-size: 16px;
@@ -113,48 +144,131 @@ body {
   font-weight: bold;
 }
 
-/* @media screen and (min-width: 1000px) {
-  .tabbars {
-  margin: 50px 50px 50px 50px;/
-
-  }
-} */
-
-@media screen and (min-width: 600px) and (max-width: 999px) {
-  .tabbars {
-    display: none;
-  }
+/* PAGE */
+.background-page {
+  background-image: url("../images/desktop/pickup-desktop.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    background-image: url("../images/home-template.png");
-    background-repeat: repeat;
-    /* background-size: 100%; */
-    background-size: contain;
-  }
+.background-page {
+  margin: 0;
+  min-height: 1000px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+
+  /* HOME */
   .tabbars {
     display: none;
   }
-  .home-body {
-    margin-top: 10px;
+
+  .background-home {
+    background-image: url("../images/tablet/home-tablet.jpg");
   }
+
+  .home-body {
+    margin-top: 30px;
+  }
+
+  .body1 {
+    grid-template-columns: 100% 100%;
+  }
+
+  .body1-grid {
+    text-align: left;
+  }
+
+  .body1-grid-onestopshop {
+    display: block;
+  }
+
   .body1-grid-lable {
-    /* color: #f2622d; */
-    font-size: 20px;
+    font-size: 110px;
+    font-weight: 500;
+    line-height: 80%;
+    margin-top: 30px;
+  }
+
+
+  .body1-grid-text {
+    font-size: 15px;
+    text-align: justify;
+    width: 40%;
+    margin: 20px 0 0 10px;
+  }
+
+  .body1-grid-button {
+    margin-top: 20px;
+  }
+
+
+  .body1-grid-button-shopnow {
+    display: none;
+  }
+
+  .body1-grid-button-learnmore {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 599px) {
+
+  /* HOME */
+  .layer {
     margin: 0px;
   }
-  
+
+  .tabbars {
+    display: none;
+  }
+
+  .background-home {
+    background-image: url("../images/phone/home-phone.jpg");
+  }
+
+  .home-body {
+    margin: 0px 10px;
+  }
+
+  .body1 {
+    grid-template-columns: 100% 100%;
+  }
+
+  .body1-grid {
+    text-align: left;
+  }
+
+  .body1-grid-onestopshop {
+    display: block;
+    font-size: 10px;
+  }
+
+  .body1-grid-lable {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 50%;
+    margin-top: 30px;
+    margin-left: 10px;
+    color: #fff;
+  }
+
+
   .body1-grid-text {
-    color: #333;
-    font-size: 5px;
-    margin: auto;
-    font-weight: bold;
-    width: 80%;
+    display: none;
+  }
+
+  .body1-grid-button {
+    margin-top: 20px;
+  }
+
+
+  .body1-grid-button-shopnow {
+    display: none;
+  }
+
+  .body1-grid-button-learnmore {
+    display: none;
   }
 }
-
-
-
-
-
