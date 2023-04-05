@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>News</title>
+   <style>
+      #news_header {
+         text-align: center;
+      }
+      #news_body {
+         display: flex;
+         flex-direction: column;
+         width: 80vw;
+         margin: auto;
+      }
+      .news_title {
+         font-size: 30px;
+         font-weight: bold;
+         cursor: pointer;
+      }
+      .news_content {
+         font-size: 18px;
+         text-align: justify;
+         margin-bottom: 20px;
+      }
+   </style>
+</head>
+<body>
+   <h2>Thong tin web site</h2>
+   <div>-- WEBSITE: <span id="tieu_de"></span></div>
+   <div>-- URL: <span id="url"></span></div>
+   <div>-- HOTLINE: <span id="hotline"></span></div>
+   <div>-- EMAIL: <span id="email"></span></div>
+   <div>-- ADDRESS: <span id="address"></span></div>
+   <h1 id="news_header">News</h1>
+   <div id="news_body">
+
+   </div>
+   <script>
+      function loadDataWebsite() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.open("GET", "https://web-design-4115f-default-rtdb.asia-southeast1.firebasedatabase.app/website.json", true);
+         xhttp.send();
+         xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+               let websiteData = JSON.parse(this.responseText);
+               console.log(websiteData);
+               document.getElementById("tieu_de").innerHTML = websiteData.title;
+               document.getElementById("url").innerHTML = websiteData.url;
+               document.getElementById("hotline").innerHTML = websiteData.hotline;
+               document.getElementById("email").innerHTML = websiteData.email;
+               document.getElementById("address").innerHTML = websiteData.address;
+            }
+         }
+      }
+
+      function loadNewsProducts() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.open("GET", "https://web-design-4115f-default-rtdb.asia-southeast1.firebasedatabase.app/news.json", true);
+         xhttp.send();
+         xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+               // In dữ liệu các sản phẩm điện thoại ở đây
+               let data = JSON.parse(this.responseText);
+               console.log(data);
+
+               for (var i = 0; i <= data.news.length - 1; i++) {
+                  // Xem tên của sản phẩm thứ i là gì?
+                  console.log(data.news[i].title);
+
+                  const nodeNew = document.createElement("div");
+                  nodeNew.setAttribute("class", "news")
+
+                  //Name
+                  const nodeTitle = document.createElement("div");
+                  nodeTitle.setAttribute("class", "news_title")
+                  nodeTitle.appendChild(document.createTextNode(data.news[i].title));
+                  nodeNew.append(nodeTitle)
+
+                  const nodeContent = document.createElement("div");
+                  nodeContent.setAttribute("class", "news_content");
+                  nodeContent.appendChild(document.createTextNode("Content: " + data.news[i].content));
+                  nodeNew.append(nodeContent)
+
+                  //Price
+                  // const nodePriceNew = document.createElement("div");
+                  // nodePriceNew.appendChild(document.createTextNode("Price New: " + products.item[i].price_new));
+                  // nodeProduct.append(nodePriceNew)
+
+                  // const nodePriceTotal = document.createElement("div");
+                  // nodePriceTotal.appendChild(document.createTextNode("Total: " + products.item[i].total));
+                  // nodeProduct.append(nodePriceTotal)
+
+                  document.getElementById("news_body").appendChild(nodeNew)
+               }
+            }
+         };
+      }
+      
+      loadDataWebsite();
+      loadNewsProducts();
+   </script>
+</body>
+</html>

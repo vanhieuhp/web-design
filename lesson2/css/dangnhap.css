@@ -1,0 +1,22 @@
+input[type="text"] {
+    margin-left: 10px;
+    width: 80%;
+}
+
+input[type="password"]  {
+    margin-left: 10px;
+    width: 80%;
+}
+
+input[type="submit"]  {
+    width: 100px;
+}
+
+input[input="reset"] {
+    width: 100px;
+}
+
+input[input="submit"]:hover {
+    color: brown;
+    background-color: aquamarine;
+}

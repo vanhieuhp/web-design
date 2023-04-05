@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Freshly-picked</title>
+     <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+     
+</head>
+
+<body>
+     <div class="page-background">
+          <div class="page-layer">
+               <div class="page-tabbars">
+                    <div class="page-tabbars-left">
+                         <button class="page-tabbars-left-menu">
+                              <span class="fas fa-bars"></span>
+                         </button>
+                         <div class="page-tabbars-left-block">
+                              <a class="page-tabbars-left-item" href="./home.html">Home</a>
+                              <a class="page-tabbars-left-item" href="./home.html">Shop</a>
+                              <a class="page-tabbars-left-item" href="#">About</a>
+                              <a class="page-tabbars-left-item" href="#">Contact Us</a>
+                         </div>
+                    </div>
+                    <div class="page-tabbars-right">
+                         <div class="page-tabbars-right-search">
+                              <a class="page-tabbars-right-item" href="#"><span class="fas fa-search"></span></a>
+                         </div>
+                         <a class="page-tabbars-right-item" href="#"><span class="fas fa-shopping-cart"></span></a>
+                    </div>
+               </div>
+               <div class="page-body">
+                    <div class="page-body1">
+                         <div class="page-body1-grid">
+                              <input class="page-body1-grid-freshly" type="button" value="Freshly picked">
+                              <h1 class="page-body1-grid-lable">Groceries</h1>
+                              <p class="page-body1-grid-text">Bluu Grocer Mart promises quality food products that are ethically sourced, fresh, and carefully
+                                   picked for our customers. Our products range from meat, vegetables to fruits that you'll
+                                   definitely enjoy.</p>
+                              <div class="page-body1-grid-button">
+                                   <input id="shopBtn" class="page-body1-grid-button-shopnow" type="button" value="SHOP NOW">
+                                   <input class="page-body1-grid-button-learnmore"  type="button" value="LEARN MORE">
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="page-footer">
+                    <h1 class="page-footer-header">Our Promise</h1>
+                    <p class="page-footer-text">Bluu Grocer Mart Promises quality 
+                         food products that are ethically soures, fresh, and 
+                         carefully picked for out customers. OUr products range 
+                         from meat, vagetables to fruits that you'll definitely 
+                         enjoy.</p>
+                    <input class="page-footer-link" type="button" value="www.bluegrocemart.com"></button>
+               </div>
+          </div>
+     </div>
+     <script>
+          const shopBtn = document.getElementById('shopBtn');
+          shopBtn.addEventListener('click', function() {
+               window.location.href = './page.html';
+          }); 
+          const navbarLeftMenuBtn = document.querySelector('.page-tabbars-left-menu');
+          const navbarLeftItems = document.querySelector('.page-tabbars-left-block');
+
+          navbarLeftMenuBtn.addEventListener('click', () => {
+               navbarLeftItems.classList.toggle('show-left-tabbar');
+          });
+     </script>
+</body>
+
+</html>
+

@@ -1,0 +1,188 @@
+/* 1. Cách chèn CSS */
+ h1 {
+	color: navy;
+}
+
+/* <head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+h1 {
+ color: orange;
+}
+</style>
+</head> */
+/* ========================================================================================================= */
+
+/* 2 COlOR */
+
+/* Ví dụ tên màu cho màu nền: */
+<h1 style="background-color:DodgerBlue;">Hello World</h1>
+<p style="background-color:Tomato;">Lorem ipsum...</p>
+
+/* Tên màu cho màu chữ: */
+<h1 style="color:Tomato;">Hello World</h1>
+<p style="color:DodgerBlue;">Lorem ipsum...</p>
+<p style="color:MediumSeaGreen;">Ut wisi enim...</p>
+
+/* Tên màu cho màu viền: */
+<h1 style="border:2px solid Tomato;">Hello World</h1>
+<h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+<h1 style="border:2px solid Violet;">Hello World</h1>
+/* ========================================================================================================= */
+
+/* 3 BACKGROUND */
+
+/* quy định màu nền của một phần tử */
+background-color: lightblue;
+
+/* Hình nền */
+body {
+	background-image: url("paper.gif");
+	background-repeat: no-repeat;  /* Để cho hình nền không lặp lại, */
+	background-position: right top; /* Vị trí hình nền */
+	background-attachment: fixed; /* Hình nền cố định */
+	background: #ffffff url("img_tree.png") no-repeat right top; /* Cách viết rút gọn  */
+}
+/* ========================================================================================================= */
+
+
+/* 4. BORDER */
+
+/* Kiểu viền
+
+dotted - Xác định đường viền chấm
+dashed - Xác định đường viền nét đứt
+solid - Xác định đường viền liền
+double - Xác định đường viền đôi
+none - Xác định không có border
+hidden - Xác định đường viền ẩn 
+
+*/
+
+/* Border từng phía */
+p {
+	border-width: 5px;  /* Độ rộng đường viền CSS */
+	border-color: red; /* màu sắc của viền */
+	border-top-style: dotted; /* Border từng phía */
+	border-right-style: solid; /* Border từng phía */
+	border-bottom-style: dotted; /* Border từng phía */
+	border-left-style: solid; /* Border từng phía */
+
+	border: 5px solid red; /* Cách viết rút gọn */	
+}
+
+/* Viền bo tròn */
+p {
+	border: 2px solid red;
+	border-radius: 5px;
+}
+/* ========================================================================================================= */
+
+
+/* 5. TEXT  */
+h1 {
+	color: green; /* Màu sắc */
+	text-align: center; /* Căn chỉnh văn bản */
+	text-align: justify; /* mỗi dòng được kéo dài sao cho mỗi dòng có chiều rộng bằng nhau */
+	text-decoration: overline;  /* Trang trí văn bản: overline, line-through, underline, none */
+	text-transform: uppercase; /* Chuyển đổi văn bản: uppercase, lowercase, capitalize */
+	text-indent: 50px;  /* Văn thụt đầu dòng */
+	letter-spacing: 3px; /* Khoảng cách chữ */
+	word-spacing: 10px; /* Khoảng cách từ */
+	line-height: 0.8; /* Chiều cao giữa các dòng */
+	direction: rtl; /* Hướng văn bản */
+	text-shadow: 3px 2px red; /* Bóng văn bản */
+}
+
+/* 6. Fonts */
+/* 
+	font-family: được sử dụng để thay đổi bề mặt font
+	font-style: được sử dụng để tạo một font chữ nghiêng hoặc chếch
+	font-variant: được sử dụng để tạo những chữ hoa nhỏ (small-cap)
+	font-weight: được sử dụng để tăng giảm độ đậm của font
+	font-size: được sử dụng để xác định kích cỡ font
+	font: rút gọn việc sử dụng nhiều thuộc tính 
+
+	https://www.w3schools.com/css/css_font_websafe.asp
+*/
+
+p { 
+	font-family: "Times New Roman", Times, serif; 
+	font-style: normal; /* Font Style: normal, italic, oblique */
+	font-variant: normal; /* nhận hai giá trị là normal và small-caps, để tạo ra chữ thường hoặc chữ hoa nhỏ */
+	font-weight: normal; /* tạo ra chữ đậm, nhạt. */
+	font-size: 20px; /* Thiết lập cỡ chữ */
+
+	font:italic small-caps bold 15px georgia;  /* Viết rút gọn */
+}
+
+/* 7. Icons */
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> /* Bootstrap Icons */
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  /* google icon */
+<i class="fas fa-cloud"></i> 
+
+/* 8. Opacity */
+img {
+	opacity: 0.5;
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+img:hover {
+	opacity: 1.0;
+	filter: alpha(opacity=100); /* Transparent Hover Effect */
+}
+
+
+
+
+/* 9. Images */
+#home {
+	width: 46px;
+	height: 44px;
+	background: url(img_navsprites.gif) 0 0;
+}
+
+#home {
+	width: 46px;
+	height: 44px;
+	background: url(img_navsprites.gif) 0 0;
+}
+
+#home {
+	width: 46px;
+	height: 44px;
+	background: url(img_navsprites.gif) 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

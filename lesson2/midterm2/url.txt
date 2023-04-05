@@ -1,0 +1,2 @@
+firebase: https://web-design-4115f-default-rtdb.asia-southeast1.firebasedatabase.app/news.json
+

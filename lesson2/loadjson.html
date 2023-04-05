@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tim hieu ve JSON</title>
+   <style>
+      .product {
+         float: flex;
+         width: 200px;
+         padding: 20px;
+         border: 1px solid red;  
+      }
+   </style>
+</head>
+
+<body>
+   <h2>Thong tin web site</h2>
+   <div>-- WEBSITE: <span id="tieu_de"></span></div>
+   <div>-- URL: <span id="url"></span></div>
+   <div>-- HOTLINE: <span id="hotline"></span></div>
+   <div>-- EMAIL: <span id="email"></span></div>
+   <div>-- ADDRESS: <span id="address"></span></div>
+
+   <h2>Thong tin san pham website cung cap</h2>
+   <div id="item_detail"></div>
+
+   <script>
+      function loadDataWebsite() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.open("GET", "https://web-design-4115f-default-rtdb.asia-southeast1.firebasedatabase.app/website.json", true);
+         xhttp.send();
+         xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+               let websiteData = JSON.parse(this.responseText);
+               console.log(websiteData);
+               document.getElementById("tieu_de").innerHTML = websiteData.title;
+               document.getElementById("url").innerHTML = websiteData.url;
+               document.getElementById("hotline").innerHTML = websiteData.hotline;
+               document.getElementById("email").innerHTML = websiteData.email;
+               document.getElementById("address").innerHTML = websiteData.address;
+            }
+         }
+      }
+
+      function loadDataProducts() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.open("GET", "https://web-design-4115f-default-rtdb.asia-southeast1.firebasedatabase.app/products.json", true);
+         xhttp.send();
+         xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+               // In dữ liệu các sản phẩm điện thoại ở đây
+               let products = JSON.parse(this.responseText);
+               console.log(products);
+
+               for (var i = 0; i <= products.item.length - 1; i++) {
+                  // Xem tên của sản phẩm thứ i là gì?
+                  console.log(products.item[i].name);
+
+                  const nodeProduct = document.createElement("div");
+                  nodeProduct.setAttribute("class", "product")
+
+                  //Name
+                  const nodeName = document.createElement("div");
+                  nodeName.appendChild(document.createTextNode("Name: " + products.item[i].name));
+                  nodeProduct.append(nodeName)
+
+                  const nodePriceOld = document.createElement("div");
+                  nodePriceOld.appendChild(document.createTextNode("Price Old: " + products.item[i].price_old));
+                  nodeProduct.append(nodePriceOld)
+
+                  //Price
+                  const nodePriceNew = document.createElement("div");
+                  nodePriceNew.appendChild(document.createTextNode("Price New: " + products.item[i].price_new));
+                  nodeProduct.append(nodePriceNew)
+
+                  const nodePriceTotal = document.createElement("div");
+                  nodePriceTotal.appendChild(document.createTextNode("Total: " + products.item[i].total));
+                  nodeProduct.append(nodePriceTotal)
+
+                  document.getElementById("item_detail").appendChild(nodeProduct)
+               }
+            }
+         };
+      }
+      
+      loadDataWebsite();
+      loadDataProducts();
+   </script>
+</body>
+
+</html>

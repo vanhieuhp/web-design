@@ -1,0 +1,13 @@
+1. Cách chèn CSS
+	h1 {
+ 		color: navy;
+	}
+
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+h1 {
+ color: orange;
+}
+</style>
+</head>

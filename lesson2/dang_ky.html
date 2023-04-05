@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dang ki tai khoang | Trường Đại học Kinh tế Quốc dân</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Dang ky tai khoan</h1>
+    <div style="padding-left: 100px; color: red;">
+        <form action="kiem_ky_thanh_vien.php">
+            <fieldset>
+                <legend>Thong tin tai khoan: </legend>
+                <p>Tên đăng nhập: <input type="text" name="txtUserName" value="" disabled></p>
+                <p>Mat Khau: <input type="password" name="txtMatKhau" value=""></p>
+                <progress value="33" max="100"></progress>
+            </fieldset>
+
+            <fieldset>
+                <legend>Thong tin ca nhan: </legend>
+                <p>Tuoi: <input type="number" name="txtTuoi" min="1" max="100"></p>
+                <p>NgaySinh: <input type="datetime-local" name="txtNgaySinh"></p>
+                <p>Anh dai dien: <input type="file" name="txtAnhDaiDien" accept="image/*"></p>
+                <p>SoDienThoai: <input type="tel" name="SoDienThoai" pattern="[0-9]{3}-[0-9]{2}-[0-9]{5}"></p>
+                <p>Gioi thieu thong tin ca nhan: <textarea name="message" rows="10" cols="50"></textarea></p>
+                <p>
+                    Gioi tinh (hien thi cach 1):
+                    <input type="radio" name="txtGioiTinh" value="1">Nam
+                    <input type="radio" name="txtGioiTinh" value="2">Nu
+                    <input type="radio" name="txtGioiTinh" value="3" checked>Khac
+                </p>
+                <p>
+                    Gioi tinh (hien thi cach 2): 
+                    <select name="txtGioiTinh">
+                        <option value="1">Nam</option>
+                        <option value="2">Nu</option>
+                        <option value="3" selected>Khac</option>
+                    </select>
+                </p>
+                <p>
+                    Kinh nghiem su dung ngon ngu lap trinh: <br>
+                    <input type="checkbox" name="txtKinh" value="1">C#<br>
+                    <input type="checkbox" name="txtKinh" value="2">.Net<br>
+                    <input type="checkbox" name="txtKinh" value="3">Java<br>
+                    <input type="checkbox" name="txtKinh" value="4">HTML, CSS, Javascript<br>
+                    <input type="checkbox" name="txtKinh" value="5">PHP<br>
+                    <input type="checkbox" name="txtKinh" value="6">khac<br>
+                </p>
+                <progress value="99" max="100"></progress>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pQN-pnXPaVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </fieldset>
+            
+            <input type="submit" name="btnLogin" value="Dang ky">
+        </form>
+    </div>
+</body>
+
+</html>

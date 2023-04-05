@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tim hieu ve JSON</title>
+</head>
+
+<body>
+   <h2>Thong tin web site</h2>
+   <div>-- WEBSITE: <span id = "tieu_de"></span></div>
+   <div>-- URL: <span id = "url"></span></div>
+   <div>-- HOTLINE: <span id = "hotline"></span></div>
+   <div>-- EMAIL: <span id = "email"></span></div>
+   <div>-- ADDRESS: <span id = "address"></span></div>
+
+   <button type="button" onclick="loadData()">Change content</button>
+   <script>
+      let text = '{ "employees" : [' +
+         '{ "firstName":"John" , "lastName":"Doe" },' +
+         '{ "firstName":"Anna" , "lastName":"Smith" },' +
+         '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+      let obj = JSON.parse(text);
+
+      console.log(obj);
+      console.log(obj.employees);
+      let string = ""
+      for (let i in obj.employees) {
+         string += `<p>Nhan su thu ${Number(i) + 1}: ` + obj.employees[i].firstName + " " + obj.employees[i].lastName + "</p>"
+      }
+      document.getElementById("demo").innerHTML = string
+
+      function loadData() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("demo1").innerHTML = this.responseText;
+            }
+         };
+         xhttp.open("GET", "https://web-design-4115f-default-rtdb.asia-southeast1.firebasedatabase.app/website.json", true);
+         xhttp.send();
+      }
+   </script>
+</body>
+
+</html>

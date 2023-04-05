@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width: 600px; margin: auto;">
+        <h1>Zoo Keeper Application Form</h1>
+        <i>Please complete the form. Mandatory fields are marked with a</i>
+        <form action="submit.html">
+            <fieldset>
+                <legend style="text-transform: uppercase;"><strong>contact details</strong></legend>
+                <p>
+                <div style="display: flex;">
+                    <div for="name" style="width: 100px;">Name:</div>
+                    <input type="text" id="name" style="width: 300px">
+                </div>
+                </p>
+                <p>
+                <div style="display: flex;">
+                    <div for="telephone" style="width: 100px;">Telephone:</div>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="telephone" style="width: 300px">
+                </div>
+                </p>
+                <p>
+                <div style="display: flex;">
+                    <div for="email" style="width: 100px;">Email:</div>
+                    <input type="email" id="email" style="width: 300px">
+                </div>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend style="text-transform: uppercase;"><strong>personal information</strong></legend>
+                <p>
+                <div style="display: flex;">
+                    <div for="age" style="width: 100px;">Age:</div>
+                    <input type="number" min="1" max="100" id="age" style="width: 300px">
+                </div>
+                </p>
+                <p>
+                <div style="display: flex;">
+                    <div for="gender" style="width: 100px;">Gender:</div>
+                    <select type="select" id="gender" style="width: 305px">
+                        <option value="1">Male</option>
+                        <option value="2">Famale</option>
+                        <option value="3" selected>Other</option>
+                    </select>
+                </div>
+                </p>
+                <p>
+                <div style="display: flex;">
+                    <label for="question" style="width: 100px;">When did you first know you wanted to be a
+                        zoo-keeper</label>
+                    <input id="question" type="" style="width: 300px"></textarea>
+                </div>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend style="text-transform: uppercase;"><strong>Pick your favorite animals</strong></legend>
+                <p>
+                <div>
+                    <div style="display: flex;">
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="1">Zebra<br>
+                        </div>
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="2">Cat<br>
+                        </div>
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="3">Anaconda<br>
+                        </div>
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="4">Human<br>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="5">Elephant<br>
+                        </div>
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="6">Wildebeest<br>
+                        </div>
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="6">Pigeon<br>
+                        </div>
+                        <div style="width: 130px;">
+                            <input type="checkbox" name="animals" value="6">Crab<br>
+                        </div>
+                    </div>
+                </div>
+                </p>
+            </fieldset>
+            <br>
+            <input type="submit" style="padding: 10px;" value="Submit Application">
+        </form>
+    </div>
+</body>
+
+</html>
